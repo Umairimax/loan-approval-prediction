@@ -1,54 +1,22 @@
-# Loan Approval ML Deployment
+# 🏦 Loan Approval Prediction System
 
-A complete Machine Learning deployment project that predicts loan approval using applicant financial information.
+An end-to-end Machine Learning project that predicts loan approval status using applicant financial and personal information. The project includes ML development, FastAPI backend, Docker deployment, AWS EC2 hosting, and Streamlit frontend.
 
-The project contains:
+## 📌 Dataset
 
-- Machine Learning Model
-- FastAPI Backend
-- Docker Containerization
-- AWS EC2 Deployment
-- Nginx Reverse Proxy
-- Streamlit Frontend
+Kaggle Dataset:  
+https://www.kaggle.com/datasets/taweilo/loan-approval-classification-data
 
+## 🤖 Machine Learning
 
-## Project Architecture
+Built a classification pipeline to predict:
 
+- Approved
+- Rejected
 
-User
- |
- |
-Streamlit Frontend
- |
- |
-FastAPI API
- |
- |
-ML Pipeline
- |
- |
-Prediction
+### Feature Engineering
 
-
-
-## Features Used
-
-The model uses:
-
-- Number of Dependents
-- Education
-- Self Employment Status
-- Annual Income
-- Loan Amount
-- Loan Term
-- CIBIL Score
-- Residential Assets
-- Commercial Assets
-- Luxury Assets
-- Bank Assets
-
-
-Feature Engineering:
+Created additional financial features:
 
 - Total Assets Value
 - Loan to Income Ratio
@@ -56,21 +24,72 @@ Feature Engineering:
 - Approx Monthly Installment
 - CIBIL Score Bucket
 
+### Features Used
 
-## Backend
+- Income
+- Loan Amount
+- Loan Term
+- CIBIL Score
+- Education
+- Self Employment
+- Dependents
+- Asset Values
+- Engineered Financial Features
 
-Backend is developed using:
+### Models Trained
 
-- FastAPI
-- Scikit-learn
+- Logistic Regression
+- Random Forest Classifier
+- Gradient Boosting Classifier
+
+Final Model Used:
+
+✅ Gradient Boosting Classifier
+
+The complete preprocessing + model pipeline was saved using Joblib.
+
+## ⚡ FastAPI Backend
+
+Developed a production API using FastAPI.
+
+Features:
+
+- Input validation with Pydantic
+- ML model inference
+- Approval probability prediction
+
+
+## 🐳 Docker & Deployment
+
+The FastAPI backend was containerized using Docker and pushed to Docker Hub.
+
+Deployment stack:
+
+- Docker
+- AWS EC2
+- Nginx Reverse Proxy
+
+## 🎨 Streamlit Frontend
+
+Created an interactive Streamlit web interface where users can enter applicant details and get instant loan approval predictions.
+
+Frontend deployed on:
+
+✅ Streamlit Cloud
+
+Backend deployed on:
+
+✅ AWS EC2
+
+
+## 🛠️ Tech Stack
+
+- Python
 - Pandas
-- Joblib
-
-
-### Run Backend Locally
-
-
-Create environment:
-
-```bash
-python -m venv venv
+- NumPy
+- Scikit-learn
+- FastAPI
+- Streamlit
+- Docker
+- AWS EC2
+- Nginx
